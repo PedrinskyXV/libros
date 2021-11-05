@@ -40,10 +40,10 @@ CREATE TABLE autor
 	estado smallint default 1
 );
 
-INSERT INTO usuario (usuario, contrasena, rol, estado)VALUES
-('admin', 'admin123', 1,1),
-('bibliotecario', 'abc123', 2,1),
-('supervisor', 'abc123', 3,1);
+INSERT INTO usuario (usuario, contrasena, rol, foto, estado)VALUES
+('admin', 'admin123', 1, 'user-root-min.png',1),
+('bibliotecario', 'abc123', 2, 'user-biblio-min.png', 1),
+('supervisor', 'abc123', 3, 'user-supervisor-min.png', 1);
 
 INSERT INTO editorial (nombre, pais,estado) VALUES
 ('Editorial A', 'Pais A',1),

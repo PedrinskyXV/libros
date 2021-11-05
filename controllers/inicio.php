@@ -10,14 +10,18 @@
                 $this->getModel()->setUsuario($_POST['txtUsuario']);
                 $this->getModel()->setContrasena($_POST['txtContrasena']);
                 //Invocar función del validación
-                $rol = $this->getModel()->validarLogin();
-                var_dump($rol);
-                die();
-                if(!empty($rol)){
+                $data = $this->getModel()->validarLogin();
+                                
+                if(!empty($data)){
                     // Crear variables de sesión
                     $_SESSION['usuario'] = $_POST['txtUsuario'];
-                    $_SESSION['rol'] = $rol;
-                    $_SESSION['foto'] = $foto;
+
+                    foreach($data as $item)
+                    {
+                        $_SESSION['rol'] = $item['rol'];
+                        $_SESSION['foto'] = $item['foto'];
+                    }                    
+                    var_dump($_SESSION);
                     // Mostrar pantalla de inicio
                     $this->getView()->loadView($pagina);
                 } else {

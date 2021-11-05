@@ -1,3 +1,3 @@
 <?php
-    define('URL','http://localhost/app/')
+    define('URL','http://localhost/libros/')
 ?>

@@ -28,12 +28,15 @@
 
         public function validarLogin(){
             $arreglo = [];
+
             $sql = "SELECT rol, foto FROM usuario WHERE usuario='".$this->usuario."' 
             AND contrasena='".$this->contrasena."'";
-            $datos = $this->getDb()->conectar()->query($sql);
+
+            $datos = $this->getDb()->conectar()->query($sql) or die(print_r("ERROR AL VALIDAR LOGIN"));
+            //var_dump($datos);
             while($fila = $datos->fetch_object()){
                 $arreglo[] = json_decode(json_encode($fila), true);
-            }
+            }            
             return $arreglo;
         }
     }
