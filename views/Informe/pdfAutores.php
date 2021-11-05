@@ -14,11 +14,11 @@ require_once 'views/Template/menu.php';
                 </div>
                 <br>
                 <div class="card-body">
-                    <form action="<?=constant('URL')?>informe/pdfEmpleados" method="POST" target="__blank">
+                    <form action="<?=constant('URL')?>informe/pdfAutores" method="POST" target="__blank">
                         <div class="row justify-content-center">
                             <br>
                             <div class="col-6">
-                                Código Empleado
+                                Código Autor
                                 <input type="number" class="form-control" name="txtCodigo" required>
                             </div>
                             <br>                            

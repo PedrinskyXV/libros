@@ -27,7 +27,7 @@ class Graficos extends Controller
                 $p->chart_type = "line";
                 // Diseño
                 $p->title = "Cantidad de empleados por area"; // Título
-                $p->xlabel = "Areas"; //Título eje x
+                $p->xlabel = "Autores"; //Título eje x
                 $p->ylabel = "Cantidad"; //Título eje y
                 $p->color = "#00A6FF"; // Colores de las barras
                 $p->theme = "dark"; // default light
@@ -35,6 +35,34 @@ class Graficos extends Controller
                 $out = $p->render('c1');
                 $this->getView()->grafico = $out;
                 $pagina = 'Graficos/lineal';
+                $this->getView()->loadView($pagina);
+            }
+        } else {
+            $this->getView()->loadView('Inicio/login');
+        }
+
+    }
+
+    public function anillo()
+    {
+        if (isset($_SESSION["rol"])) {
+
+            if ($_SESSION["rol"] != 3) {
+                $this->getView()->loadView('Inicio/login');
+            } else {
+                $p = new chartphp();
+                // Contenido
+                $datos[] = $this->getModel()->graficoAnillo();
+                $p->data = $datos;
+                $p->chart_type = "donut"; 
+                // Diseño
+                $p->title = "Usuarios por rol"; // Título
+                $p->color = "metro"; // Colores
+                $p->theme = "dark"; // default light
+                // Renderizar gráfico
+                $out = $p->render('c1');
+                $this->getView()->grafico = $out;
+                $pagina = 'Graficos/anillo';
                 $this->getView()->loadView($pagina);
             }
         } else {

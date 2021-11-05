@@ -25,10 +25,10 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li>
-                                <a class="dropdown-item" href="<?=constant('URL')?>informe/pdfSucursal" target="_blank">Reporte 1</a>
+                                <a class="dropdown-item" href="<?=constant('URL')?>informe/pdfEditorial" target="_blank">Reporte 1</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="<?=constant('URL')?>informe/pdfEmpleados">Reporte 2</a>
+                                <a class="dropdown-item" href="<?=constant('URL')?>informe/pdfAutores">Reporte 2</a>
                             </li>
                         </ul>
                     </li>
@@ -43,6 +43,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li>
                                 <a class="dropdown-item" href="<?=constant('URL')?>graficos/lineal">Grafico de Linea</a>
+                                <a class="dropdown-item" href="<?=constant('URL')?>graficos/anillo">Grafico de Anillo</a>
                             </li>
                         </ul>
                     </li>
