@@ -13,7 +13,7 @@ require_once 'views/Template/menu.php';
             
             <a href="<?=constant('URL')?>libro/nuevo" class="btn btn-block btn-primary mt-3">Agregar Libro</a>
 
-            <table class="table table-hover table-responsive" id="productos">
+            <table class="table table-hover table-responsive" id="Libros">
                 <thead class="table-dark text-white text-center">
                     <tr>
                         <th scope="col">Código</th>

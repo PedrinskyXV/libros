@@ -12,7 +12,7 @@ require_once 'views/Template/menu.php';
     <div class="row justify-content-center mt-4">
         <div class="col-lg-6 mt-4">
             <h2 class="text-center pt-3">Nuevo Libro</h2>
-            <form action="<?=constant('URL')?>libro/agregar" method="POST" id="frmProductos">
+            <form action="<?=constant('URL')?>libro/agregar" method="POST" id="frmlibros">
                 
                 <span class="badge bg-dark">ISBN</span>
                 <input type="text" class="form-control my-3" name="txtIsbn" data-validetta="required">

@@ -11,7 +11,7 @@ require_once 'views/Template/menu.php';
     <div class="col-lg-6 mx-auto">
         <h4 class="text-primary text-center pb-2">Detalles del libro</h4>
 
-        <form action="<?=constant('URL')?>libro/modificar" method="POST" id="frmProductos">
+        <form action="<?=constant('URL')?>libro/modificar" method="POST" id="frmLibros">
             <?php
                         $datos = $this->datos;
                     ?>

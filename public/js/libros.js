@@ -7,7 +7,7 @@ $(document).ready(function () {
       url: url + "libro/mostrarLibros",
       success: function (response) {
         //console.log(response)
-        $("#productos tbody").html(response);
+        $("#Libros tbody").html(response);
       },
       error: function () {
         console.log("error ajax");
@@ -15,9 +15,9 @@ $(document).ready(function () {
     });
   }
 
-  // Agregar productos
+  // Agregar Libros
   $("#btnAdd").click(function (e) {
-    $("#frmProductos").validetta({
+    $("#frmLibros").validetta({
       realTime: true,
       bubblePosition: "bottom",
       bubbleGapTop: 20,
@@ -25,7 +25,7 @@ $(document).ready(function () {
       onValid: function (e) {
         e.preventDefault();
 
-        var form = $("#frmProductos");
+        var form = $("#frmLibros");
         var method = form.attr("method");
         var action = form.attr("action");
         var data = form.serialize();
@@ -36,8 +36,8 @@ $(document).ready(function () {
           success: function (response) {
             console.log(response)
             var mensaje = response
-              ? "Producto insertado"
-              : "Error al insertar el producto";
+              ? "Libro insertado"
+              : "Error al insertar el Libro";
             Swal.fire(mensaje);
             form[0].reset();
             window.location = url + "libro/index";
@@ -50,10 +50,10 @@ $(document).ready(function () {
     });
   });
 
-  //Modificar productos
+  //Modificar Libros
   $("#btnModificar").click(function (e) {
     e.preventDefault();
-    var form = $("#frmProductos");
+    var form = $("#frmLibros");
     var method = form.attr("method");
     var action = form.attr("action");
     var data = form.serialize();
@@ -65,8 +65,8 @@ $(document).ready(function () {
       success: function (response) {
         console.log(response);
         var mensaje = response
-          ? "Producto modificado"
-          : "Error al modificar el producto";
+          ? "Libro modificado"
+          : "Error al modificar el Libro";
         Swal.fire(mensaje);
         window.location = url + "libro/index";
       },
@@ -77,7 +77,7 @@ $(document).ready(function () {
         
   });
 
-  // Eliminar productos
+  // Eliminar Libros
   $("body").on("click", "#btnEliminar", function (e) {
     e.preventDefault();
     var href = $(this).attr("href");
@@ -95,10 +95,10 @@ $(document).ready(function () {
             url: href,
             success: function (response) {
               var mensaje = response
-                ? "Producto eliminado"
-                : "Error al eliminar el producto";
+                ? "Libro eliminado"
+                : "Error al eliminar el Libro";
               Swal.fire(mensaje);
-              // Invocar función para listar productos
+              // Invocar función para listar Libros
               mostrarLibros();
             },
             error: function (response) {

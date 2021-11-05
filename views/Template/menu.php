@@ -14,7 +14,7 @@
                     <a class="nav-link" href="<?=constant('URL')?>inicio/index" onclick="agregarAlTitulo('Inicio');">Inicio</a>
 
                     <?php if($_SESSION['rol'] == "1"): ?>
-                        <a class="nav-link" href="<?=constant('URL')?>libro/index" onclick="agregarAlTitulo('Productos');">Libros</a>                    
+                        <a class="nav-link" href="<?=constant('URL')?>libro/index" onclick="agregarAlTitulo('Libros');">Libros</a>                    
                     <?php endif; ?>
 
                     <?php if($_SESSION['rol'] == "2"): ?>
