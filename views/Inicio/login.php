@@ -21,9 +21,9 @@
                 <div class="card-body">
                     <h2 class="text-center pt-3 lead font-weight-bold display-4 my-5">Bienvenido</h2>
                     <form action="<?=constant('URL')?>inicio/index" method="POST">
-                        <span class="badge badge-dark">Usuario</span>
+                        <span class="badge bg-dark">Usuario</span>
                         <input type="text" class="form-control mb-3" name="txtUsuario">
-                        <span class="badge badge-dark">Contraseña</span>
+                        <span class="badge bg-dark">Contraseña</span>
                         <input type="password" class="form-control mb-3" name="txtContrasena">
                         <button class="btn btn-dark mt-2 btn-block btn-sm my-5">Iniciar Sesión</button>
                     </form>

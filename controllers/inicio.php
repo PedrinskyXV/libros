@@ -21,7 +21,7 @@
                         $_SESSION['rol'] = $item['rol'];
                         $_SESSION['foto'] = $item['foto'];
                     }                    
-                    var_dump($_SESSION);
+                    //var_dump($_SESSION);
                     // Mostrar pantalla de inicio
                     $this->getView()->loadView($pagina);
                 } else {

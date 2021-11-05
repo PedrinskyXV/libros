@@ -140,13 +140,14 @@ class LibroModelo extends Model
             l.codigoLibro,
             l.nombre,
             l.isbn,
+            l.precio,
             l.codigoEditorial,
-            e.nombre as Editorial
+            e.nombre as Editorial,
+            l.estado
         FROM
             libro l
         INNER JOIN
-            editorial e ON l.codigoEditorial = e.codigoEditorial
-        WHERE e.estado = 1 
+            editorial e ON l.codigoEditorial = e.codigoEditorial         
         ORDER BY l.codigoLibro ASC";
 
         $datos = $this->getDb()->conectar()->query($sql);
@@ -191,20 +192,19 @@ class LibroModelo extends Model
         try {
             $sql = "UPDATE libro
             SET
-            nombre ='" . $this->nombre . "',
-            isbn =" . $this->isbn . ",
-            precio =" . $this->precio . ",
-            codigoEditorial =" . $this->codigoEditorial . ",
+            nombre = '" . $this->nombre . "',
+            isbn = " . $this->isbn . ",
+            precio = " . $this->precio . ",
+            codigoEditorial = " . $this->codigoEditorial . ",
             estado = " . $this->estado . "
             WHERE codigoLibro = " . $this->codigo;
             $res = $this->getDb()->conectar()->query($sql);
 
-            print_r($sql);
-            print_r($res);
+            //print_r($sql);            
 
             return ($res === true) ? true : false;
         } catch (Throwable $th) {
-            var_dump($th->getMessage());
+            //var_dump($th->getMessage());
             return $th->getMessage();
         }
 
@@ -213,7 +213,7 @@ class LibroModelo extends Model
     public function eliminarLibro()
     {
 
-        $sql = "UPDATE libro SET estado = 0 WHERE codigoLibro = " . $this->codigo;
+        $sql = "DELETE FROM libro WHERE codigoLibro = " . $this->codigo;
 
         $res = $this->getDb()->conectar()->query($sql);
 
