@@ -24,6 +24,7 @@
     </script>
     <script src="<?=constant('URL')?>/public/js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="<?=constant('URL')?>/public/css/estilos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/themes@5.0.6/borderless/borderless.min.css">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
@@ -37,5 +38,6 @@
 </head>
 
 <body class="d-flex h-100 text-center text-dark bg-light">
+<div class="loader"></div>
 <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
 

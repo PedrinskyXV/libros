@@ -1,16 +1,27 @@
+function ocultarLoader() {
+  $(".loader").fadeOut("slow");
+}
+
+function mostrarLoader() {
+  $(".loader").css("display", "block");
+}
+
 $(document).ready(function () {
   mostrarLibros();
 
   function mostrarLibros() {
+    mostrarLoader();
     $.ajax({
       type: "POST",
       url: url + "libro/mostrarLibros",
       success: function (response) {
         //console.log(response)
         $("#Libros tbody").html(response);
+        ocultarLoader();
       },
       error: function () {
         console.log("error ajax");
+        ocultarLoader();
       },
     });
   }

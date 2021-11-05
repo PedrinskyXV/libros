@@ -12,6 +12,14 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 <script src="<?=constant('URL')?>public/validetta/validetta.js"></script>
 <script src="<?=constant('URL')?>public/js/libros.js"></script>
+
+<script type="text/javascript">
+	$(window).on("load",function(){
+		$(".loader").fadeOut(3500);
+	});
+</script>
+
+
 </body>
 
 </html>
