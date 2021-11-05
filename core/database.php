@@ -8,7 +8,7 @@
         public function __construct(){
             $this->host = 'localhost';
             $this->user = 'root';
-            $this->pass = '1523';
+            $this->pass = '';
             $this->db = 'exFinal';
         }
 

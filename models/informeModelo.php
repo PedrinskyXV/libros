@@ -5,12 +5,11 @@
             parent::__construct();
         }
 
-        public function reporteSucursal()
+        public function reporteEditorial()
         {
             $arreglo = [];
-            $sql = "SELECT a.codigoArea AS Codigo, a.nombre AS Nombre, a.telefono AS Telefono, s.nombre AS Sucursal
-            FROM area a
-            INNER JOIN sucursal s on a.codigoSucursal = s.codigoSucursal;
+            $sql = "SELECT e.nombre AS Editorial, l.codigoLibro AS Codigo, l.nombre AS Nombre, l.isbn AS ISBN FROM libro l
+            INNER JOIN editorial e on l.codigoEditorial = e.codigoEditorial;
             ";
             $datos = $this->getDb()->conectar()->query($sql);
             while($fila = $datos->fetch_object()){
@@ -19,13 +18,14 @@
             return $arreglo;
         }
 
-        public function reporteEmpleados($campo,$valor)
+        public function reporteAutor($campo,$valor)
         {
             $arreglo = [];
-            $where = ($campo==1)?'e.codigoEmpleado='.$valor:'e.codigoEmpleado='.$valor;
-            $sql = "SELECT e.codigoEmpleado AS 'Codigo', e.nombre AS 'Nombre', a.nombre AS 'Area', s.nombre AS 'Sucursal', e.sueldoBase AS 'Sueldo Base', FORMAT((e.sueldoBase -((e.sueldoBase*0.07)+(e.sueldoBase*0.0925)+(e.sueldoBase*0.1))), 2) AS 'Sueldo Final' FROM empleado e
-            INNER JOIN area a ON e.codigoArea = a.codigoArea
-            INNER JOIN sucursal s on a.codigoSucursal = s.codigoSucursal WHERE ".$where;
+            $where = ($campo==1)?'a.codigoAutor='.$valor:
+            $sql = "SELECT a.codigoAutor AS Codigo, a.nombre AS Nombre, l.nombre AS Libro, e.nombre AS Editorial, FORMAT((l.precio + (l.precio*0.13)), 2) AS Precio FROM autor a
+            INNER JOIN libro l ON a.codigoLibro = l.codigoLibro
+            INNER JOIN editorial e on l.codigoEditorial = e.codigoEditorial
+            WHERE".$where;
             $datos = $this->getDb()->conectar()->query($sql);
             while($fila = $datos->fetch_object()){
                 $arreglo[] = json_decode(json_encode($fila),true);
