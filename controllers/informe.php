@@ -26,7 +26,7 @@
         public function pdfEditorial(){
             $pdf = new TCPDF();
             $pdf->setHeaderMargin(10);
-            $pdf->setHeaderData(PDF_HEADER_LOGO, 60, 'Reporte', 'Areas');
+            $pdf->setHeaderData(PDF_HEADER_LOGO, 60, 'Reporte', 'Editorial');
             $pdf->SetMargins(20, 30, 20);
             // Consulta a bd
             $sucursal = $this->getModel()->reporteEditorial();
@@ -62,7 +62,7 @@
                 // Crear PDF
                 $pdf = new TCPDF();
                 $pdf->setHeaderMargin(10);
-                $pdf->setHeaderData(PDF_HEADER_LOGO, 60, 'Reporte', 'Autores');
+                $pdf->setHeaderData(PDF_HEADER_LOGO, 60, 'Reporte', 'Libros');
                 $pdf->SetMargins(20, 30, 20);
                 if(!empty($datos)){
                     $html = '<table border="1" cellpadding="3">

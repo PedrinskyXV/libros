@@ -26,7 +26,7 @@ class Graficos extends Controller
                 $p->data = $datos;
                 $p->chart_type = "line";
                 // Diseño
-                $p->title = "Cantidad de empleados por area"; // Título
+                $p->title = "Cantidad de libros por Autor"; // Título
                 $p->xlabel = "Autores"; //Título eje x
                 $p->ylabel = "Cantidad"; //Título eje y
                 $p->color = "#00A6FF"; // Colores de las barras
@@ -56,7 +56,7 @@ class Graficos extends Controller
                 $p->data = $datos;
                 $p->chart_type = "donut"; 
                 // Diseño
-                $p->title = "Usuarios por rol"; // Título
+                $p->title = "Cantidad de libros por Autor"; // Título
                 $p->color = "metro"; // Colores
                 $p->theme = "dark"; // default light
                 // Renderizar gráfico
